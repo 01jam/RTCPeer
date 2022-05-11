@@ -105,6 +105,11 @@ export class RTCPeer {
 
 			const localDescription = await this._RTCPeerConnection.createAnswer();
 			await this._RTCPeerConnection.setLocalDescription(localDescription);
+
+			return {
+				localDescription,
+				remoteDescription,
+			};
 		} catch (e) {
 			console.log(e);
 			return;
